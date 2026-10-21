@@ -1,0 +1,100 @@
+[build]
+  command = "npm run verify"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Strict-Transport-Security = "max-age=31536000"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+# Redirect old informational URLs, not private account/API routes.
+[[redirects]]
+  from = "/blog"
+  to = "/recursos/"
+  status = 301
+[[redirects]]
+  from = "/blog/como-crear-una-llc.html"
+  to = "/recursos/antes-de-crear-tu-empresa/"
+  status = 301
+[[redirects]]
+  from = "/blog/como-obtener-ein.html"
+  to = "/otros-servicios/"
+  status = 301
+[[redirects]]
+  from = "/blog/como-construir-credito-empresarial.html"
+  to = "/recursos/credito-empresarial-base/"
+  status = 301
+[[redirects]]
+  from = "/blog/*"
+  to = "/recursos/"
+  status = 301
+[[redirects]]
+  from = "/privacy"
+  to = "/privacidad/"
+  status = 301
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacidad/"
+  status = 301
+[[redirects]]
+  from = "/terms"
+  to = "/terminos/"
+  status = 301
+[[redirects]]
+  from = "/terms.html"
+  to = "/terminos/"
+  status = 301
+[[redirects]]
+  from = "/disclaimer"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/disclaimer.html"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/refund"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/refund.html"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/accuracy"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/accuracy.html"
+  to = "/transparencia/"
+  status = 301
+[[redirects]]
+  from = "/esign"
+  to = "/terminos/"
+  status = 301
+[[redirects]]
+  from = "/esign.html"
+  to = "/terminos/"
+  status = 301

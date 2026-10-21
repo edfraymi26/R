@@ -1,0 +1,25 @@
+{
+  "name": "rivera-financial-group",
+  "version": "3.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Rivera Financial Group LLC \u2014 bilingual informational website and Niklaus assistant",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "verify": "npm run build && npm test && npm run check",
+    "dev": "node scripts/dev.mjs",
+    "test:browser": "node scripts/browser-check.mjs",
+    "predeploy": "npm run verify",
+    "deploy": "netlify deploy --prod",
+    "reviews": "node scripts/manage-reviews.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "playwright": "1.64.1"
+  }
+}

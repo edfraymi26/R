@@ -1,0 +1,23 @@
+RIVERA FINANCIAL GROUP LLC — ENTREGA v3.4
+
+1. Lee README.md y docs/LANZAMIENTO.md.
+2. Publica el proyecto completo en el sitio Netlify existente.
+   Build: npm run verify | Publish: dist | Functions: netlify/functions
+3. Añade GROQ_API_KEY como secreto de Netlify, alcance Functions, contexto Production.
+4. Vuelve a desplegar. No necesitas editar código.
+5. Ejecuta scripts/doctor.mjs con el dominio y después con --ai.
+
+Arrastrar solamente dist/ a Netlify Drop NO instala el servidor de Niklaus.
+Sin clave hay guía local identificada. Configuración presente NO significa
+conexión comprobada. No hay claves en esta entrega.
+
+Pruebas y pendientes: docs/VERIFICACION.md.
+Modelo y cuotas: docs/GROQ.md.
+No se publicó ni se cambió el dominio durante esta preparación.
+
+Eduardo Rivera, CEO
+riverafinancialgroup.net
+riverafinancialgroup0@gmail.com
++12676662239
+
+NUEVO: activa Forms en Netlify y revisa docs/RESENAS.md antes de recibir reseñas.
